@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="vieport" content="width=device-width, initial-scale=0.1">
+        <title>Casa Lumina</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'frontend/styles.css' %}">
+        <script src="{% static 'frontend/js/script.js' %}" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img src="{% static 'frontend/images/logo.jpg' %}" alt="Company Logo" class="logo">
+                <h1>Casa Lumina</h1>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class = "navbar">
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'Properties' %}">Properties</a>
+                <a href="{% url 'Services' %}">Services</a>
+                <a href="{% url 'Contact' %}">Contact</a>
+            </nav>
+        </header>
+    <section class="services">
+        <div class="service">
+            <h2>Buy a Property</h2>
+            <p>Looking for your dream home? We offer a wide range of properties to suit all your needs and preferences. Our team of experienced agents will guide you through the buying process and help you find the perfect property.</p>
+            <a href="{% url 'Properties' %}">View available Properties</a>
+        </div>
+        <div class="service">
+            <h2>Sell a Property</h2>
+            <p>Ready to sell your property? We provide comprehensive services to ensure a smooth and successful sale. From pricing strategies to marketing and negotiations, our experts are here to help you get the best deal.</p>
+            <a href="{% url 'submit_property' %}" class="btn">Sell with us</a>
+        </div>
+        <div class="service">
+            <h2>Rent a Property</h2>
+            <p>Looking for a rental property? We have a wide selection of rental properties to fit your lifestyle and budget. Our team will assist you in finding the right rental property and make the renting process hassle-free.</p>
+            <a href="{% url 'Properties' %}">View Rentals</a>
+        </div>
+    </section>
+    <footer>
+        <p>Reach us at: </p>
+        <p>&copy; 2025 Casa Lumina. All rights reserved.</p>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="vieport" content="width=device-width, initial-scale=0.1">
+        <title>Casa Lumina</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'frontend/styles.css' %}">
+        <script src="{% static 'frontend/js/script.js' %}" defer></script>
+    </head>
+    <body class="contact">
+        <header>
+            <div class="logo-container">
+                <img src="{% static 'frontend/images/logo.jpg' %}" alt="Company Logo" class="logo">
+                <h1>Casa Lumina</h1>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class= "navbar">
+                <a href="{% url 'Home' %}">Home</a>
+                <a href="{% url 'Properties' %}">Properties</a>
+                <a href="{% url 'Services' %}">Services</a>
+                <a href="{% url 'Contact' %}">Contact</a>
+            </nav>
+        </header>
+        <div class="container">
+            <h1>Talk to us!</h1>
+            <form action="#" method="post" onsubmit="handleSubmit(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+    
+                <label for="message">Enter message:</label>
+                <textarea id="text" name="message" rows="5" placeholder="Enter message" required></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div> 
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Casa Lumina. All rights reserved.</p>
+    </footer>
+</body>
+</html>
